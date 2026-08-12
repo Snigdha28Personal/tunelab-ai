@@ -1,0 +1,221 @@
+id,input_text,label
+1,"I was charged twice for my monthly subscription on August 1st. Please refund the extra charge.",billing
+2,"How do I update my credit card details for automatic billing?",billing
+3,"My invoice shows a fee of $49 instead of the agreed $29 promotional rate.",billing
+4,"Can I get a VAT invoice for my company tax returns for last quarter?",billing
+5,"I upgraded to the Pro plan yesterday but my billing statement still says Basic plan.",billing
+6,"Where can I download receipts for past payments?",billing
+7,"The checkout page keeps failing when I try to pay with my Visa card.",billing
+8,"Is there an annual discount if I switch from monthly billing?",billing
+9,"I was charged even though I canceled my free trial three days ago.",billing
+10,"Why is there an unexpected $15 charge on my bank statement from TuneLab?",billing
+11,"I received a payment failure notification but my card details are valid.",billing
+12,"Can you split our enterprise bill across two different department budgets?",billing
+13,"I need to update the billing contact email address on our account.",billing
+14,"Why was I charged sales tax when our non-profit organization is tax-exempt?",billing
+15,"Can I request a 14-day extension on my pending invoice payment?",billing
+16,"I paid via wire transfer last Friday but my account is still marked as overdue.",billing
+17,"Our finance department needs a formal quote before we can pay the invoice.",billing
+18,"I forgot to apply my discount promo code SAVE20 during checkout. Can it be applied retroactively?",billing
+19,"I tried to upgrade my tier but received error code PAY_301.",billing
+20,"Please change my billing currency from USD to EUR.",billing
+21,"I cannot log in to my account because 2FA code is not arriving on my phone.",authentication
+22,"I forgot my account password and the reset email link has expired.",authentication
+23,"How do I set up Single Sign-On (SSO) with Okta for my organization?",authentication
+24,"I got locked out after three failed password attempts. Please unlock my profile.",authentication
+25,"Can I change the email address associated with my primary login?",authentication
+26,"The Google OAuth sign-in button returns an invalid redirect URI error.",authentication
+27,"My session keeps timing out every 5 minutes while I am actively working.",authentication
+28,"How do I revoke API access tokens that were generated for a former employee?",authentication
+29,"I lost access to my authenticator app. How can I use recovery backup keys?",authentication
+30,"Can we enforce mandatory multi-factor authentication (MFA) for all team members?",authentication
+31,"When I try to sign in with GitHub, I get a permission denied error page.",authentication
+32,"How do I configure SAML 2.0 authentication for Azure AD?",authentication
+33,"My team member did not receive their workspace invite email.",authentication
+34,"I logged in on a new laptop and now I cannot see my workspace projects.",authentication
+35,"Why does the login page keep looping back to the password prompt without error?",authentication
+36,"Is hardware security key (Security Key / FIDO2) supported for login?",authentication
+37,"I need to transfer ownership of the admin account to another manager.",authentication
+38,"My magic link login email is arriving 30 minutes late and expiring.",authentication
+39,"Can I restrict user logins to specific IP address ranges?",authentication
+40,"I am logged in but receiving a 403 Unauthorized error on all subpages.",authentication
+41,"The app crashes every time I export a dataset containing more than 5,000 rows.",technical_issue
+42,"API requests are failing with HTTP 500 Internal Server Error when querying evaluation endpoint.",technical_issue
+43,"The web dashboard displays a blank white screen on Safari browser version 16.4.",technical_issue
+44,"CSV upload gets stuck at 99% processing and never completes.",technical_issue
+45,"Latency spikes up to 8 seconds during batch evaluation of 100 prompts.",technical_issue
+46,"The confusion matrix widget is rendering overlapping text labels on mobile devices.",technical_issue
+47,"WebSocket connection disconnects unexpectedly during model evaluation runs.",technical_issue
+48,"Getting CUDA out of memory error message in backend worker process log.",technical_issue
+49,"Filtered search results in the dataset viewer are returning incorrect totals.",technical_issue
+50,"Data export to JSON format drops special unicode characters.",technical_issue
+51,"The application throws JavaScript Unhandled Rejection error when toggling dark mode.",technical_issue
+52,"Metrics calculation returns NaN for Precision when true positive count is zero.",technical_issue
+53,"Chart visualization fails to render when dataset has only 1 class present.",technical_issue
+54,"Auto-save feature is silently failing and losing unsaved hypothesis definitions.",technical_issue
+55,"The FastAPI server CPU usage reaches 100% when generating confusion matrix.",technical_issue
+56,"Images embedded in error analysis reports are broken links.",technical_issue
+57,"Dataset split operation raises KeyError label on valid CSV input file.",technical_issue
+58,"Evaluation runner drops connection after 60 seconds timeout.",technical_issue
+59,"The pagination controls on the experiment history page are non-responsive.",technical_issue
+60,"Real-time metrics streaming shows negative elapsed time counter.",technical_issue
+61,"I want to cancel my subscription immediately and get a prorated refund.",cancellation
+62,"Please terminate my account and delete all stored training datasets and models.",cancellation
+63,"Where can I close my account? I no longer need this platform.",cancellation
+64,"I am canceling our team subscription because we are migrating to another tool.",cancellation
+65,"How do I stop auto-renewal for my annual plan before the renewal date?",cancellation
+66,"Please cancel my subscription before the trial period ends tomorrow.",cancellation
+67,"I requested cancellation last week but I was charged again today.",cancellation
+68,"If I cancel my subscription, will I still have access until the end of the billing cycle?",cancellation
+69,"Can I pause my subscription for 3 months instead of canceling completely?",cancellation
+70,"I want to deactivate my workspace and remove all user permissions.",cancellation
+71,"Please process immediate cancellation of order #982341.",cancellation
+72,"I am closing our startup and need to downgrade to the free tier immediately.",cancellation
+73,"How do I opt out of automatic plan renewal?",cancellation
+74,"I want to remove my credit card and cancel all future billing charges.",cancellation
+75,"Can I cancel my account without contacting customer support?",cancellation
+76,"Please shut down our organization workspace and erase all uploaded data.",cancellation
+77,"We decided not to proceed with the trial. Please terminate the account.",cancellation
+78,"I need a confirmation email that my account cancellation has been processed.",cancellation
+79,"Can I reactivate my account after I cancel it?",cancellation
+80,"Close account #CS-4091 and stop all recurring billing charges.",cancellation
+81,"Can you add support for multi-label classification experiments?",feature_request
+82,"It would be great to have dark mode support across all evaluation dashboards.",feature_request
+83,"Please add direct integration with Hugging Face Hub for model weights download.",feature_request
+84,"Feature request: export confusion matrix and metrics report directly to PDF.",feature_request
+85,"We need webhook notifications when a long fine-tuning job finishes training.",feature_request
+86,"Can we get automated hyperparameter tuning for fine-tuning jobs?",feature_request
+87,"Would love an option to compare 3 or more models side-by-side in one chart.",feature_request
+88,"Please add support for custom metric evaluation formulas in Python.",feature_request
+89,"Can you support Anthropic Claude models for baseline evaluation comparison?",feature_request
+90,"Feature request: automated synthetic data generation for rare target classes.",feature_request
+91,"It would be helpful to have bulk dataset tagging and annotation tools.",feature_request
+92,"Can we schedule recurring evaluation runs on a weekly basis?",feature_request
+93,"Please build Slack / Teams alert integration for experiment completion notifications.",feature_request
+94,"We need role-based access control (RBAC) for team member permissions.",feature_request
+95,"Can you add support for local LLM evaluation via Ollama or vLLM endpoints?",feature_request
+96,"Feature request: dataset versioning and diff comparison view.",feature_request
+97,"It would be awesome to export fine-tuning datasets formatted for Axolotl / Unsloth.",feature_request
+98,"Can you add confidence score filtering in the error analysis drilldown?",feature_request
+99,"Please provide an API endpoint to trigger baseline evaluations programmatically.",feature_request
+100,"We need cost projection alerts when estimated monthly cost exceeds $500.",feature_request
+101,"What are your business operating hours for customer support assistance?",other
+102,"Where is your company headquarters located?",other
+103,"Are you currently hiring senior full-stack software engineers?",other
+104,"Can I read your privacy policy and terms of service documentation?",other
+105,"Do you offer enterprise security compliance reports such as SOC2 Type II?",other
+106,"Who is the chief executive officer of TuneLab AI?",other
+107,"Is there a community Discord or Slack channel for TuneLab users?",other
+108,"Where can I submit a guest blog post or case study about LLM fine-tuning?",other
+109,"Do you offer educational discounts for university researchers and students?",other
+110,"What is your roadmap for ISO 27001 certification compliance?",other
+111,"Can I schedule a 30-minute sales demo call with your product specialist?",other
+112,"Are you attending the NeurIPS or ICML conference this year?",other
+113,"Where can I find press kit logos and brand assets for media coverage?",other
+114,"Does TuneLab offer consulting services for enterprise LLM deployment?",other
+115,"What is the history behind the founding of TuneLab platform?",other
+116,"How does your company handle data privacy and GDPR compliance for EU users?",other
+117,"Can I cite your benchmark methodology whitepaper in my academic research paper?",other
+118,"Do you have an affiliate or referral program for AI consultants?",other
+119,"What are your system requirements for hosting the backend on-premise?",other
+120,"Is there a public roadmap board where users can vote on upcoming features?",other
+121,"I was double billed for my subscription last week and need a refund.",billing
+122,"How can I update my billing credit card info on the settings page?",billing
+123,"My receipt displays $99 instead of $49. Please check my account billing.",billing
+124,"I need a formal tax invoice for accounting audit purposes.",billing
+125,"I tried upgrading to Team tier but received payment decline message.",billing
+126,"Reset password link is not arriving in my email inbox after 15 minutes.",authentication
+127,"How do I connect our corporate Okta SSO identity provider to TuneLab?",authentication
+128,"I got locked out due to multiple failed login attempts.",authentication
+129,"Our team member cannot log in after changing their domain email address.",authentication
+130,"Is 2-factor authentication mandatory for admin users on our organization?",authentication
+131,"The application crashes whenever I try to run error analysis on large dataset.",technical_issue
+132,"Receiving 504 Gateway Timeout error when running baseline evaluation on 200 items.",technical_issue
+133,"The confusion matrix table is misaligned when viewing on tablet screens.",technical_issue
+134,"CSV parser fails when column headers contain whitespace or uppercase characters.",technical_issue
+135,"Evaluation engine returns HTTP 500 error code when dataset has empty rows.",technical_issue
+136,"Please cancel my subscription immediately as our project funding was paused.",cancellation
+137,"I want to close my account and delete all project evaluation data today.",cancellation
+138,"Where is the account cancellation button located on the dashboard?",cancellation
+139,"We are shutting down our workspace and need to stop auto billing charges.",cancellation
+140,"Please cancel my account prior to the end of my trial period.",cancellation
+141,"We need support for custom evaluation metrics like BLEU and ROUGE scores.",feature_request
+142,"Can you add an automated export feature to send reports directly to S3 buckets?",feature_request
+143,"Please add support for Llama 3 fine-tuning dataset formatting options.",feature_request
+144,"Feature request: dark theme visual toggle in the main menu bar.",feature_request
+145,"Can we get real-time email alerts when fine-tuning accuracy drops below threshold?",feature_request
+146,"What is the support email address for general product inquiries?",other
+147,"Do you have a partnership program for AI software vendors?",other
+148,"Where can I review your data retention policy for enterprise tier accounts?",other
+149,"Is TuneLab platform compliant with HIPAA regulations for medical data?",other
+150,"How can I sign up for your monthly product newsletter updates?",other
+151,"I disputed a charge on my credit card statement because I did not recognize TuneLab.",billing
+152,"Can I prepay for an annual enterprise contract via bank ACH transfer?",billing
+153,"Why was I charged an international transaction fee on my last billing statement?",billing
+154,"Our accounting team requires a vendor W-9 form before processing payment.",billing
+155,"Can you send payment invoices directly to our accounts payable department email?",billing
+156,"My authentication token expired while running a 3-hour evaluation pipeline.",authentication
+157,"Can we restrict team logins so users can only sign in using corporate SSO?",authentication
+158,"I am getting Session Invalid error right after entering correct password.",authentication
+159,"How do I generate a new API key for server-to-server automated evaluations?",authentication
+160,"I am unable to disable 2FA on my user profile after changing my mobile phone.",authentication
+161,"The metric computation engine returns wrong accuracy score when missing values exist.",technical_issue
+162,"FastAPI server crashes with unhandled exception when uploading invalid JSONL format.",technical_issue
+163,"The line graph for F1 improvement does not update dynamically on filter change.",technical_issue
+164,"Exporting dataset to CSV produces corrupted headers when quotes are unescaped.",technical_issue
+165,"Evaluation pipeline gets stuck in infinite pending state when API key is invalid.",technical_issue
+166,"I want to cancel my account immediately because I found a cheaper alternative product.",cancellation
+167,"Please stop all recurring billing charges and terminate my team workspace access.",cancellation
+168,"How do I delete my payment method to prevent automatic plan renewal next month?",cancellation
+169,"I am requesting a full refund and immediate account cancellation due to poor uptime.",cancellation
+170,"Can I cancel my account during the middle of the billing cycle without penalty?",cancellation
+171,"Can we export error analysis charts into vector SVG format for presentations?",feature_request
+172,"Feature request: integration with Weights & Biases for fine-tuning tracking.",feature_request
+173,"Please add a cost comparison estimator for Mistral vs OpenAI fine-tuning costs.",feature_request
+174,"Can you add a batch dataset annotation view with keyboard shortcuts?",feature_request
+175,"Feature request: automated prompt template optimization before fine-tuning.",feature_request
+176,"Do you offer academic research grants for university AI evaluation labs?",other
+177,"Where can I find your brand guidelines and high-resolution logo assets?",other
+178,"Who is the primary contact for press and media inquiries regarding TuneLab?",other
+179,"Are your API servers hosted in the US East or US West cloud regions?",other
+180,"Do you have a public security vulnerability disclosure program bug bounty?",other
+181,"I received a billing invoice with wrong company address details.",billing
+182,"Can I change the credit card on file for recurring subscription charges?",billing
+183,"Why did my bill increase from $199 to $299 without prior notification?",billing
+184,"Please send a receipt copy for transaction ID #TXN-9021840.",billing
+185,"Is there a fee for adding additional team seats to our monthly plan?",billing
+186,"SAML authentication failed with error SAML_RESPONSE_INVALID_SIGNATURE.",authentication
+187,"My manager needs admin access to reset locked user accounts in our org.",authentication
+188,"I lost my hardware YubiKey device. How do I access my developer profile?",authentication
+189,"Why am I prompted to log in again every time I open a new browser tab?",authentication
+190,"Can we set user session timeout limits to 15 minutes for compliance?",authentication
+191,"Backend worker memory spikes to 4GB during confusion matrix normalization.",technical_issue
+192,"Dataset split function raises error on datasets with single-class examples.",technical_issue
+193,"The modal window for experiment configuration cannot be scrolled on mobile.",technical_issue
+194,"Metrics engine throws zero division error when calculating recall for rare class.",technical_issue
+195,"Pytest suite fails on test_metrics due to floating point rounding difference.",technical_issue
+196,"I want to cancel my plan because our project scope has changed completely.",cancellation
+197,"Please cancel my subscription and send confirmation of data deletion.",cancellation
+198,"How can I downgrade from Business tier to Free tier without canceling?",cancellation
+199,"Please process account termination for workspace id #WS-883012.",cancellation
+200,"I am closing our test account. Please cancel recurring billing immediately.",cancellation
+201,"Feature request: support for custom classification threshold tuning per class.",feature_request
+202,"Can you add support for multi-GPU local fine-tuning script generation?",feature_request
+203,"Please add CSV download option for filtered error analysis table rows.",feature_request
+204,"Feature request: automated model latency benchmarking under peak load.",feature_request
+205,"Can we integrate TuneLab metrics directly into our CI/CD GitHub Actions workflow?",feature_request
+206,"Are there any public webinars or video tutorials on evaluating LLM fine-tuning?",other
+207,"What is your protocol for handling customer data deletion requests under CCPA?",other
+208,"Does TuneLab offer student discounts for university coursework projects?",other
+209,"Where can I read user reviews and testimonials about TuneLab platform?",other
+210,"Is there a community forum for discussing fine-tuning hyperparameter settings?",other
+211,"I was charged twice for subscription order #ORD-771249. Please process refund.",billing
+212,"I cannot log in with Google OAuth because of domain restriction error.",authentication
+213,"The dataset preview table freezes when scrolling through 500 rows.",technical_issue
+214,"Please cancel our team subscription before next week's billing renewal date.",cancellation
+215,"Feature request: export fine-tuning dataset directly to OpenAI format JSONL.",feature_request
+216,"What cloud infrastructure providers do you use for backend model hosting?",other
+217,"Can you update our tax VAT number on all previous billing invoices?",billing
+218,"I am getting 401 Unauthorized error when calling FastAPI dataset endpoint.",authentication
+219,"App crashes with memory error when calculating per-class F1 score on large matrix.",technical_issue
+220,"Please cancel my account immediately and stop sending promotional emails.",cancellation
