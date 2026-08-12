@@ -104,7 +104,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased selection:bg-indigo-600 selection:text-white">
       {/* Navbar */}
       <Header
         useDemoMode={useDemoMode}
@@ -122,16 +122,16 @@ export default function Home() {
       {/* Main Container */}
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
         {/* Top Experiment Trigger Action Bar */}
-        <div className="mb-6 flex flex-col gap-4 rounded-xl border border-indigo-500/30 bg-gradient-to-r from-indigo-950/40 via-slate-900 to-slate-900 p-4 sm:flex-row sm:items-center sm:justify-between shadow-lg">
+        <div className="mb-6 flex flex-col gap-4 rounded-xl border border-indigo-200 bg-gradient-to-r from-indigo-50/80 via-white to-white p-4 sm:flex-row sm:items-center sm:justify-between shadow-xs">
           <div className="flex items-center space-x-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-600/20 text-indigo-400">
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-100 text-indigo-700">
               <Sparkles className="h-5 w-5" />
             </div>
             <div>
-              <h1 className="text-base font-bold text-white">
+              <h1 className="text-base font-extrabold text-slate-950">
                 Experiment: Customer Support Ticket Classification
               </h1>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-slate-500 font-medium">
                 Evaluating {examples.length} tickets across 6 categories using Python scikit-learn ML pipeline.
               </p>
             </div>
@@ -140,7 +140,7 @@ export default function Home() {
           <button
             onClick={handleRunPipeline}
             disabled={isRunningExperiment || examples.length === 0}
-            className="flex items-center space-x-2 rounded-xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 px-6 py-2.5 font-bold text-white shadow-lg shadow-indigo-500/25 hover:brightness-110 disabled:opacity-50 transition-all shrink-0 text-xs"
+            className="flex items-center space-x-2 rounded-xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 px-6 py-2.5 font-extrabold text-white shadow-md shadow-indigo-500/25 hover:brightness-110 disabled:opacity-50 transition-all shrink-0 text-xs"
           >
             {isRunningExperiment ? (
               <>

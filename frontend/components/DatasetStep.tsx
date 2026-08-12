@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { DatasetExample, DatasetAnalysisResponse } from "@/types/experiment";
-import { Upload, Database, AlertTriangle, CheckCircle, ShieldAlert, FileText, Search, Sparkles } from "lucide-react";
+import { Upload, Database, AlertTriangle, CheckCircle, FileText, Search, Sparkles } from "lucide-react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from "recharts";
 
 interface DatasetStepProps {
@@ -13,7 +13,7 @@ interface DatasetStepProps {
   onNext: () => void;
 }
 
-const COLORS = ["#6366f1", "#8b5cf6", "#ec4899", "#f43f5e", "#10b981", "#06b6d4"];
+const COLORS = ["#4f46e5", "#7c3aed", "#db2777", "#e11d48", "#059669", "#0891b2"];
 
 export function DatasetStep({ examples, analysis, onUpload, onUseDemo, onNext }: DatasetStepProps) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -36,27 +36,27 @@ export function DatasetStep({ examples, analysis, onUpload, onUseDemo, onNext }:
   return (
     <div className="space-y-6">
       {/* Top Banner & Control Bar */}
-      <div className="flex flex-col gap-4 rounded-xl border border-slate-800 bg-slate-900/60 p-5 backdrop-blur-sm sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-xs sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h2 className="text-xl font-bold text-white flex items-center gap-2">
-            <Database className="h-5 w-5 text-indigo-400" />
+          <h2 className="text-xl font-extrabold text-slate-900 flex items-center gap-2">
+            <Database className="h-5 w-5 text-indigo-600" />
             Dataset Selection & Health Validation
           </h2>
-          <p className="mt-1 text-sm text-slate-400">
+          <p className="mt-1 text-sm text-slate-500 font-medium">
             Upload custom CSV/JSONL or inspect the pre-loaded 220 customer support ticket dataset.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-3">
           <button
             onClick={onUseDemo}
-            className="flex items-center space-x-2 rounded-lg bg-indigo-600 px-4 py-2 text-xs font-semibold text-white transition-all hover:bg-indigo-500 shadow-md shadow-indigo-600/20"
+            className="flex items-center space-x-2 rounded-lg bg-indigo-600 px-4 py-2 text-xs font-bold text-white transition-all hover:bg-indigo-500 shadow-md shadow-indigo-600/20"
           >
             <Sparkles className="h-4 w-4" />
             <span>Load Demo Dataset (220 Items)</span>
           </button>
 
-          <label className="flex cursor-pointer items-center space-x-2 rounded-lg border border-slate-700 bg-slate-800 px-4 py-2 text-xs font-semibold text-slate-200 transition-all hover:bg-slate-700 hover:text-white">
-            <Upload className="h-4 w-4 text-slate-400" />
+          <label className="flex cursor-pointer items-center space-x-2 rounded-lg border border-slate-300 bg-white px-4 py-2 text-xs font-bold text-slate-700 transition-all hover:bg-slate-50 shadow-xs">
+            <Upload className="h-4 w-4 text-slate-500" />
             <span>Upload CSV / JSONL</span>
             <input
               type="file"
@@ -76,19 +76,19 @@ export function DatasetStep({ examples, analysis, onUpload, onUseDemo, onNext }:
       {analysis && (
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           {/* Health Score Card */}
-          <div className="flex flex-col justify-between rounded-xl border border-slate-800 bg-slate-900/80 p-5 shadow-lg">
+          <div className="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
             <div>
-              <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
                   Dataset Quality Score
                 </span>
                 <span
                   className={`rounded-full px-2.5 py-0.5 text-xs font-extrabold ${
                     analysis.health_score >= 85
-                      ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                      ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
                       : analysis.health_score >= 70
-                      ? "bg-amber-500/10 text-amber-400 border border-amber-500/20"
-                      : "bg-rose-500/10 text-rose-400 border border-rose-500/20"
+                      ? "bg-amber-50 text-amber-700 border border-amber-200"
+                      : "bg-rose-50 text-rose-700 border border-rose-200"
                   }`}
                 >
                   Grade: {analysis.quality_grade}
@@ -96,60 +96,60 @@ export function DatasetStep({ examples, analysis, onUpload, onUseDemo, onNext }:
               </div>
 
               <div className="my-6 flex items-center justify-center space-x-6">
-                <div className="relative flex h-28 w-28 items-center justify-center rounded-full bg-slate-950 ring-8 ring-indigo-500/20 shadow-inner">
+                <div className="relative flex h-28 w-28 items-center justify-center rounded-full bg-indigo-50/60 ring-8 ring-indigo-100 shadow-inner">
                   <div className="text-center">
-                    <span className="text-4xl font-black text-white">{analysis.health_score}</span>
-                    <span className="text-xs text-slate-500 block">/ 100</span>
+                    <span className="text-4xl font-black text-indigo-950">{analysis.health_score}</span>
+                    <span className="text-xs text-slate-500 font-semibold block">/ 100</span>
                   </div>
                 </div>
                 <div className="space-y-1.5 text-xs">
                   <div className="flex items-center justify-between gap-4">
-                    <span className="text-slate-400">Completeness (30%)</span>
-                    <span className="font-semibold text-slate-200">{analysis.score_breakdown.completeness}/30</span>
+                    <span className="text-slate-600 font-medium">Completeness (30%)</span>
+                    <span className="font-bold text-slate-900">{analysis.score_breakdown.completeness}/30</span>
                   </div>
                   <div className="flex items-center justify-between gap-4">
-                    <span className="text-slate-400">Class Balance (20%)</span>
-                    <span className="font-semibold text-slate-200">{analysis.score_breakdown.class_balance}/20</span>
+                    <span className="text-slate-600 font-medium">Class Balance (20%)</span>
+                    <span className="font-bold text-slate-900">{analysis.score_breakdown.class_balance}/20</span>
                   </div>
                   <div className="flex items-center justify-between gap-4">
-                    <span className="text-slate-400">Duplicates (20%)</span>
-                    <span className="font-semibold text-slate-200">{analysis.score_breakdown.duplicate_rate}/20</span>
+                    <span className="text-slate-600 font-medium">Duplicates (20%)</span>
+                    <span className="font-bold text-slate-900">{analysis.score_breakdown.duplicate_rate}/20</span>
                   </div>
                   <div className="flex items-center justify-between gap-4">
-                    <span className="text-slate-400">Consistency (15%)</span>
-                    <span className="font-semibold text-slate-200">{analysis.score_breakdown.label_consistency}/15</span>
+                    <span className="text-slate-600 font-medium">Consistency (15%)</span>
+                    <span className="font-bold text-slate-900">{analysis.score_breakdown.label_consistency}/15</span>
                   </div>
                   <div className="flex items-center justify-between gap-4">
-                    <span className="text-slate-400">Text Quality (15%)</span>
-                    <span className="font-semibold text-slate-200">{analysis.score_breakdown.text_quality}/15</span>
+                    <span className="text-slate-600 font-medium">Text Quality (15%)</span>
+                    <span className="font-bold text-slate-900">{analysis.score_breakdown.text_quality}/15</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-2 border-t border-slate-800 pt-3 text-center text-xs">
-              <div className="rounded-lg bg-slate-950/60 p-2">
-                <div className="text-[10px] text-slate-500">Total Rows</div>
-                <div className="font-bold text-white">{analysis.total_examples}</div>
+            <div className="grid grid-cols-3 gap-2 border-t border-slate-100 pt-3 text-center text-xs">
+              <div className="rounded-lg bg-slate-50 p-2 border border-slate-100">
+                <div className="text-[10px] text-slate-500 font-semibold">Total Rows</div>
+                <div className="font-bold text-slate-900">{analysis.total_examples}</div>
               </div>
-              <div className="rounded-lg bg-slate-950/60 p-2">
-                <div className="text-[10px] text-slate-500">Classes</div>
-                <div className="font-bold text-white">{analysis.num_classes}</div>
+              <div className="rounded-lg bg-slate-50 p-2 border border-slate-100">
+                <div className="text-[10px] text-slate-500 font-semibold">Classes</div>
+                <div className="font-bold text-slate-900">{analysis.num_classes}</div>
               </div>
-              <div className="rounded-lg bg-slate-950/60 p-2">
-                <div className="text-[10px] text-slate-500">Avg Length</div>
-                <div className="font-bold text-white">{analysis.average_text_length} chars</div>
+              <div className="rounded-lg bg-slate-50 p-2 border border-slate-100">
+                <div className="text-[10px] text-slate-500 font-semibold">Avg Length</div>
+                <div className="font-bold text-slate-900">{analysis.average_text_length} chars</div>
               </div>
             </div>
           </div>
 
           {/* Class Distribution Chart */}
-          <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-5 shadow-lg flex flex-col justify-between">
-            <div className="border-b border-slate-800 pb-3 flex items-center justify-between">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
-                Class Imbalance & Support Distribution
+          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm flex flex-col justify-between">
+            <div className="border-b border-slate-100 pb-3 flex items-center justify-between">
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                Class Support Distribution
               </span>
-              <span className="text-xs text-slate-500">{analysis.num_classes} Categories</span>
+              <span className="text-xs text-slate-500 font-medium">{analysis.num_classes} Categories</span>
             </div>
             <div className="h-52 w-full my-2">
               <ResponsiveContainer width="100%" height="100%">
@@ -157,8 +157,8 @@ export function DatasetStep({ examples, analysis, onUpload, onUseDemo, onNext }:
                   <XAxis dataKey="label" stroke="#64748b" fontSize={10} angle={-25} textAnchor="end" />
                   <YAxis stroke="#64748b" fontSize={10} />
                   <Tooltip
-                    contentStyle={{ backgroundColor: "#0f172a", borderColor: "#334155", borderRadius: "8px" }}
-                    itemStyle={{ color: "#f8fafc", fontSize: "12px" }}
+                    contentStyle={{ backgroundColor: "#ffffff", borderColor: "#cbd5e1", borderRadius: "8px", boxShadow: "0 4px 6px -1px rgba(0,0,0,0.1)" }}
+                    itemStyle={{ color: "#0f172a", fontSize: "12px" }}
                   />
                   <Bar dataKey="count" radius={[4, 4, 0, 0]}>
                     {chartData.map((entry, index) => (
@@ -168,46 +168,46 @@ export function DatasetStep({ examples, analysis, onUpload, onUseDemo, onNext }:
                 </BarChart>
               </ResponsiveContainer>
             </div>
-            <div className="flex flex-wrap gap-2 text-[11px] border-t border-slate-800 pt-2">
+            <div className="flex flex-wrap gap-2 text-[11px] border-t border-slate-100 pt-2">
               {chartData.map((item) => (
-                <div key={item.label} className="flex items-center space-x-1 text-slate-400">
-                  <div className="h-2 w-2 rounded-full" style={{ backgroundColor: item.color }} />
-                  <span>{item.label}: <strong className="text-slate-200">{item.count}</strong> ({item.pct}%)</span>
+                <div key={item.label} className="flex items-center space-x-1 text-slate-600">
+                  <div className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: item.color }} />
+                  <span>{item.label}: <strong className="text-slate-900 font-bold">{item.count}</strong> ({item.pct}%)</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Warnings & PM Recommendations */}
-          <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-5 shadow-lg flex flex-col justify-between">
-            <div className="border-b border-slate-800 pb-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
+          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm flex flex-col justify-between">
+            <div className="border-b border-slate-100 pb-3">
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
                 Data Quality Audit & Warnings
               </span>
             </div>
             <div className="space-y-3 my-3 text-xs overflow-y-auto max-h-56 pr-1">
               {analysis.warnings.length > 0 ? (
                 analysis.warnings.map((w, i) => (
-                  <div key={i} className="flex items-start space-x-2 rounded-lg bg-amber-500/10 p-2.5 border border-amber-500/20 text-amber-300">
-                    <AlertTriangle className="h-4 w-4 text-amber-400 shrink-0 mt-0.5" />
-                    <span>{w}</span>
+                  <div key={i} className="flex items-start space-x-2 rounded-lg bg-amber-50 p-2.5 border border-amber-200 text-amber-900">
+                    <AlertTriangle className="h-4 w-4 text-amber-600 shrink-0 mt-0.5" />
+                    <span className="font-medium">{w}</span>
                   </div>
                 ))
               ) : (
-                <div className="flex items-center space-x-2 rounded-lg bg-emerald-500/10 p-2.5 text-emerald-400">
+                <div className="flex items-center space-x-2 rounded-lg bg-emerald-50 p-2.5 text-emerald-700 border border-emerald-200">
                   <CheckCircle className="h-4 w-4" />
-                  <span>No severe dataset warnings detected.</span>
+                  <span className="font-medium">No severe dataset warnings detected.</span>
                 </div>
               )}
 
               {analysis.recommendations.map((rec, i) => (
-                <div key={i} className="flex items-start space-x-2 rounded-lg bg-indigo-500/10 p-2.5 border border-indigo-500/20 text-indigo-300">
-                  <Sparkles className="h-4 w-4 text-indigo-400 shrink-0 mt-0.5" />
-                  <span><strong>PM Tip:</strong> {rec}</span>
+                <div key={i} className="flex items-start space-x-2 rounded-lg bg-indigo-50 p-2.5 border border-indigo-200 text-indigo-900">
+                  <Sparkles className="h-4 w-4 text-indigo-600 shrink-0 mt-0.5" />
+                  <span><strong className="font-bold">PM Tip:</strong> {rec}</span>
                 </div>
               ))}
             </div>
-            <div className="pt-2 border-t border-slate-800 text-[11px] text-slate-500 text-center">
+            <div className="pt-2 border-t border-slate-100 text-[11px] text-slate-500 text-center font-medium">
               Evaluated programmatically in Python
             </div>
           </div>
@@ -215,44 +215,44 @@ export function DatasetStep({ examples, analysis, onUpload, onUseDemo, onNext }:
       )}
 
       {/* Dataset Records Table Viewer */}
-      <div className="rounded-xl border border-slate-800 bg-slate-900/80 p-5 shadow-lg space-y-4">
+      <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm space-y-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center space-x-2">
-            <FileText className="h-4 w-4 text-indigo-400" />
-            <h3 className="text-sm font-bold text-white">Dataset Records Viewer</h3>
-            <span className="rounded bg-slate-800 px-2 py-0.5 text-xs text-slate-400">
+            <FileText className="h-4 w-4 text-indigo-600" />
+            <h3 className="text-sm font-bold text-slate-900">Dataset Records Viewer</h3>
+            <span className="rounded bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate-600">
               {examples.length} records
             </span>
           </div>
 
           <div className="relative">
-            <Search className="absolute left-3 top-2.5 h-3.5 w-3.5 text-slate-500" />
+            <Search className="absolute left-3 top-2.5 h-3.5 w-3.5 text-slate-400" />
             <input
               type="text"
               placeholder="Search by text or label..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full rounded-lg border border-slate-800 bg-slate-950 pl-8 pr-3 py-1.5 text-xs text-slate-200 placeholder-slate-500 focus:border-indigo-500 focus:outline-none sm:w-64"
+              className="w-full rounded-lg border border-slate-300 bg-white pl-8 pr-3 py-1.5 text-xs text-slate-900 placeholder-slate-400 focus:border-indigo-600 focus:outline-none sm:w-64"
             />
           </div>
         </div>
 
-        <div className="max-h-72 overflow-y-auto rounded-lg border border-slate-800 bg-slate-950">
+        <div className="max-h-72 overflow-y-auto rounded-lg border border-slate-200 bg-white">
           <table className="w-full text-left text-xs">
-            <thead className="sticky top-0 bg-slate-900 text-slate-400 border-b border-slate-800">
+            <thead className="sticky top-0 bg-slate-100 text-slate-600 border-b border-slate-200 font-bold">
               <tr>
                 <th className="px-4 py-2.5 w-16">ID</th>
                 <th className="px-4 py-2.5">Input Text</th>
                 <th className="px-4 py-2.5 w-36">Label</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800/60 text-slate-300">
+            <tbody className="divide-y divide-slate-100 text-slate-800 font-medium">
               {filteredExamples.slice(0, 30).map((ex) => (
-                <tr key={ex.id} className="hover:bg-slate-900/40">
-                  <td className="px-4 py-2 font-mono text-slate-500">#{ex.id}</td>
+                <tr key={ex.id} className="hover:bg-slate-50">
+                  <td className="px-4 py-2 font-mono text-slate-400">#{ex.id}</td>
                   <td className="px-4 py-2 max-w-lg truncate">{ex.input_text}</td>
                   <td className="px-4 py-2">
-                    <span className="inline-block rounded border border-indigo-500/30 bg-indigo-500/10 px-2 py-0.5 text-[11px] font-medium text-indigo-300">
+                    <span className="inline-block rounded border border-indigo-200 bg-indigo-50 px-2 py-0.5 text-[11px] font-bold text-indigo-700">
                       {ex.label}
                     </span>
                   </td>
@@ -267,7 +267,7 @@ export function DatasetStep({ examples, analysis, onUpload, onUseDemo, onNext }:
       <div className="flex justify-end pt-2">
         <button
           onClick={onNext}
-          className="flex items-center space-x-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-3 font-semibold text-white shadow-lg shadow-indigo-500/20 hover:from-indigo-500 hover:to-purple-500"
+          className="flex items-center space-x-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 px-6 py-3 font-bold text-white shadow-lg shadow-indigo-500/20 hover:from-indigo-500 hover:to-purple-500"
         >
           <span>Proceed to STEP 02 — Define Baseline Hypothesis</span>
         </button>
